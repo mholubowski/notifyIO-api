@@ -1,0 +1,18 @@
+!!!
+%head
+  %meta{:charset => "utf-8"}
+    %title Hello World
+    %meta{:name => "viewport", :content => "initial-scale=1"}
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}
+    %script{:src => "js/jquery.js", :type => "text/javascript"}
+    %link{:rel => "stylesheet", :type => "text/css" , :href => "/stylesheets/web.css"}
+  %body
+
+    %header
+      %h1 Header
+
+      = yield
+
+    %footer
+      %p &copy; YOU! :D
