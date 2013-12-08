@@ -1,15 +1,15 @@
 require 'capistrano/ext/puppetize'
 require "bundler/capistrano"
 
-EC2_DNS_ADDRESS = "fake-ip.eu-west-1.compute.amazonaws.com"
+EC2_DNS_ADDRESS = "ec2-67-202-41-254.compute-1.amazonaws.com"
 
-set :ssh_private_key, File.expand_path("#{ENV['HOME']}/.ec2/your-key-pair.pem")
+set :ssh_private_key, File.expand_path("#{ENV['HOME']}/.ssh/NotifyIO-Keypair.pem")
 set :ssh_options,{keys: fetch(:ssh_private_key), forward_agent: true}
 
-set :user, "ec2-user"
+set :user, "ubuntu"
 
 set :application, "app"
-set :repository,  "git@github.com:MrMister/ec2-sinatra.git"
+set :repository,  "git@github.com:mholubowski/notifyIO-api.git"
 set :deploy_via, :remote_cache
 
 set :deploy_to, "/home/#{user}/www/#{application}"
